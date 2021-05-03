@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace pato
 {
-    public class PatoBase : IPatoBase
+    public class PatoBase : IPatoBase, IPatoBaseHabilidad, IPatoBaseInfraestructura
     {
         public string TipoPato { get; set; }
 

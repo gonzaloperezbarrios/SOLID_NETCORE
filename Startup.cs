@@ -31,6 +31,8 @@ namespace pato
          
             services.AddScoped<ICisne, Cisne>();
             services.AddScoped<IPatoBase, PatoBase>();
+            services.AddScoped<IPatoBaseHabilidad, PatoBase>();
+            services.AddScoped<IPatoBaseInfraestructura, PatoBase>();
             services.AddScoped<INadar, NadarHabilidad>();
             // services.AddScoped<INadar, NadarSuperHabilidad>();
 
