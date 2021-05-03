@@ -28,7 +28,13 @@ namespace pato
         {
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
+         
+            services.AddScoped<ICisne, Cisne>();
+            services.AddScoped<IPatoBase, PatoBase>();
+            services.AddScoped<INadar, NadarHabilidad>();
+            // services.AddScoped<INadar, NadarSuperHabilidad>();
+
+               services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "pato", Version = "v1" });
             });

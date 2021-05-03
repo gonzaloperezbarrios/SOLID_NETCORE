@@ -1,32 +1,37 @@
 using System.Collections.Generic;
 
-public class Cisne : PatoBase,IPato
+namespace pato
 {
-
-    public Cisne()
+    public class Cisne : IPato, ICisne
     {
-        TipoPato = "Cisne";
-    }
-    public string PonerHuevos()
-    {
-        return $"Cantidad de huevos en un {TipoPato}: {2 + 2 * 3}";
-    }
+        private readonly IPatoBase _IPatoBase;
+        public Cisne(IPatoBase iPatoBase)
+        {
+            this._IPatoBase=iPatoBase;
+            _IPatoBase.setTipoPato("Cisne");
+            // TipoPato = "Cisne";
+        }
+        public string PonerHuevos()
+        {
+            return $"Cantidad de huevos en un {_IPatoBase.getTipoPato()}: {2 + 2 * 3}";
+        }
 
 
-    public string Sonido()
-    {
-        return $"El {TipoPato} hace clock clock clock";
-    }
+        public string Sonido()
+        {
+            return $"El {_IPatoBase.getTipoPato()} hace clock clock clock";
+        }
 
-    public IEnumerable<string> CrearPato()
-    {
-        return new string[] {
-                this.Nadar(),
-                this.Volar(),
+        public IEnumerable<string> CrearPato()
+        {
+            return new string[] {
+                _IPatoBase.Nadar(),
+                _IPatoBase.Volar(),
                 this.Sonido(),
-                this.Guardar()
+                _IPatoBase.Guardar()
                 };
+        }
+
+
     }
-
-
 }

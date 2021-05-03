@@ -1,14 +1,18 @@
-public class VolarHabilidad
+
+namespace pato
 {
-
-    private string tipoPato;
-
-    public VolarHabilidad(string _tipoPato)
+    public class VolarHabilidad
     {
-        tipoPato = _tipoPato;
-    }
-    public string Volar()
-    {
-        return $"El {tipoPato} vuela";
+
+        private string tipoPato;
+
+        public VolarHabilidad(string _tipoPato)
+        {
+            tipoPato = _tipoPato;
+        }
+        public string Volar()
+        {
+            return $"El {tipoPato} vuela";
+        }
     }
 }

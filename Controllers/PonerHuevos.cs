@@ -1,14 +1,17 @@
 using System.Collections.Generic;
 
-class PonerHuevos
+namespace pato
 {
-    public IEnumerable<string> Cantidad(List<IPato> patos)
+    public class PonerHuevos
     {
-        List<string> huevos = new List<string>();
-        foreach (IPato pato in patos)
+        public IEnumerable<string> Cantidad(List<IPato> patos)
         {
-            huevos.Add(pato.PonerHuevos());
+            List<string> huevos = new List<string>();
+            foreach (IPato pato in patos)
+            {
+                huevos.Add(pato.PonerHuevos());
+            }
+            return huevos;
         }
-        return huevos;
     }
 }

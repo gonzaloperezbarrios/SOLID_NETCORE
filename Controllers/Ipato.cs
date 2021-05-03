@@ -1,4 +1,8 @@
-interface IPato{
+namespace pato
+{
+    public interface IPato
+    {
 
-    string PonerHuevos();
+        string PonerHuevos();
+    }
 }

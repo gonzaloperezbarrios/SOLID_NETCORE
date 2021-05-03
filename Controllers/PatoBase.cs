@@ -1,45 +1,70 @@
 using System.Collections.Generic;
 
-public class PatoBase
+namespace pato
 {
-    public string TipoPato { get; set; }
+    public class PatoBase : IPatoBase
+    {
+        public string TipoPato { get; set; }
 
-    public PatoBase(string _tipoPato)
-    {
-        TipoPato = _tipoPato;
-    }
-    public PatoBase()
-    {
-        TipoPato = "Pato";
-    }
+        public string GetTipoPato()
+        {
+            return TipoPato;
+        }
 
-    public string Nadar()
-    {
-        return new NadarHabilidad(TipoPato).Nadar();
-    }
+        private readonly INadar _iNadar;
+        public PatoBase(INadar iNadar )
+        {
+            this._iNadar=iNadar;
+            TipoPato = "pato";
+        }
 
-    public string Volar()
-    {
-        return new VolarHabilidad(TipoPato).Volar();
-    }
+        // public PatoBase(string _tipoPato)
+        // {
+        //     TipoPato = _tipoPato;    
+        // }
+        public PatoBase()
+        {
+            TipoPato = "Pato";
+        }
+        public string Nadar()
+        {
+            _iNadar.setTipoPato(TipoPato);
+            return _iNadar.Nadar();
+        }
 
-    public string Sonido()
-    {
-        return new SonidoHabilidad(TipoPato).Sonido();
-    }
+        public string Volar()
+        {
+            return new VolarHabilidad(TipoPato).Volar();
+        }
 
-    public string Guardar()
-    {
-        return new GuardarInfraestuctura().Guardar();
-    }
+        public string Sonido()
+        {
+            return new SonidoHabilidad(TipoPato).Sonido();
+        }
 
-    public IEnumerable<string> CrearPato()
-    {
-        return new string[] {
+        public string Guardar()
+        {
+            return new GuardarInfraestuctura().Guardar();
+        }
+
+        public IEnumerable<string> CrearPato()
+        {
+            return new string[] {
                 this.Nadar(),
                 this.Volar(),
                 this.Sonido(),
                 this.Guardar()
                 };
+        }
+
+        public void setTipoPato(string _tipoPato)
+        {
+            TipoPato=_tipoPato;
+        }
+
+        public string getTipoPato()
+        {
+            return TipoPato;
+        }
     }
 }

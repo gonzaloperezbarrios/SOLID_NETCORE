@@ -1,14 +1,19 @@
-public class SonidoHabilidad
+
+
+namespace pato
 {
-
-    private string tipoPato;
-
-    public SonidoHabilidad(string _tipoPato)
+    public class SonidoHabilidad
     {
-        tipoPato = _tipoPato;
-    }
-    public string Sonido()
-    {
-        return $"El {tipoPato} hace cuak cuak cuak";
+
+        private string tipoPato;
+
+        public SonidoHabilidad(string _tipoPato)
+        {
+            tipoPato = _tipoPato;
+        }
+        public string Sonido()
+        {
+            return $"El {tipoPato} hace cuak cuak cuak";
+        }
     }
 }

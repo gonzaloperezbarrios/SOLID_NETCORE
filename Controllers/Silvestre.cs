@@ -1,14 +1,18 @@
 using System.Collections.Generic;
-public class Silvestre : PatoBase, IPato
+namespace pato
 {
-    public Silvestre()
+    public class Silvestre : PatoBase, IPato
     {
-        TipoPato = "Silvestre";
-    }
+        public Silvestre()
+        {
+            TipoPato = "Silvestre";
+        }
 
-    public string PonerHuevos(){
-        return $"Cantidad de huevos en un pato {TipoPato}: {5 * 3}";
-    }
+        public string PonerHuevos()
+        {
+            return $"Cantidad de huevos en un pato {TipoPato}: {5 * 3}";
+        }
 
-    
+
+    }
 }
