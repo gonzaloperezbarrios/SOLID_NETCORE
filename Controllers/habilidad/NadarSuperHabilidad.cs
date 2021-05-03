@@ -1,7 +1,7 @@
 
 namespace pato
 {
-    public class NadarHabilidad: INadar
+    public class NadarSuperHabilidad: INadar
     {
 
         private string tipoPato;
@@ -9,7 +9,7 @@ namespace pato
   
         public string Nadar()
         {
-            return $"EL {tipoPato} nada";
+            return $"EL {tipoPato} nada con MOTOR DIESEL";
         }
 
         public void setTipoPato(string _tipoPato)
