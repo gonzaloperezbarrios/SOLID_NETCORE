@@ -1,31 +1,35 @@
 using System.Collections.Generic;
 
-public class PatoGoma : PatoBase,IPato
+public class PatoGoma : IpatoNoValodor
 {
+    PatoBase patoBase = new PatoBase();
 
     public PatoGoma()
     {
-        TipoPato = "PatoGoma";
-    }
-    public string PonerHuevos()
-    {
-        throw new System.Exception("No pone huevos");
-    }
-
-    public string Volar()
-    {
-        throw new System.Exception("No vuela");
+        patoBase.TipoPato = "PatoGoma";
     }
 
     public IEnumerable<string> CrearPato()
     {
         return new string[] {
                 this.Nadar(),
-                // this.Volar(),
                 this.Sonido(),
                 this.Guardar()
                 };
     }
 
+    public string Nadar()
+    {
+        return patoBase.Nadar();
+    }
 
+    public string Sonido()
+    {
+        return patoBase.Sonido();
+    }
+
+    public string Guardar()
+    {
+        return patoBase.Guardar();
+    }
 }
