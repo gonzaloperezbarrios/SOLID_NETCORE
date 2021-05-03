@@ -4,27 +4,32 @@ public class PatoBase
 {
     public string TipoPato { get; set; }
 
+    public PatoBase(string _tipoPato)
+    {
+        TipoPato = _tipoPato;
+    }
     public PatoBase()
     {
         TipoPato = "Pato";
     }
     public string Nadar()
     {
-        return $"EL {TipoPato} nada";
+        return new NadarHabilidad(TipoPato).Nadar();
     }
 
     public string Volar()
     {
-        return $"El {TipoPato} vuela";
+        return new VolarHabilidad(TipoPato).Volar();
     }
 
     public string Sonido()
     {
-        return $"El {TipoPato} hace cuak cuak cuak";
+        return new SonidoHabilidad(TipoPato).Sonido();
     }
 
-    public string Guardar(){
-        return "Se guarda en SQL-SERVER";
+    public string Guardar()
+    {
+        return new GuardarInfraestuctura().Guardar();
     }
 
     public IEnumerable<string> CrearPato()

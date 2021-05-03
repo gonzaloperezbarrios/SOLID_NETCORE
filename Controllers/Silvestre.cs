@@ -1,7 +1,10 @@
-public class Silvestre: PatoBase
+using System.Collections.Generic;
+public class Silvestre : PatoBase
 {
-    public Silvestre(){
-        TipoPato="Silvestre";
-    } 
+    public Silvestre()
+    {
+        TipoPato = "Silvestre";
+    }
+
     
 }
