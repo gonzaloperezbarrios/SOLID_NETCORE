@@ -23,7 +23,7 @@ namespace pato.Controllers
         public IEnumerable<string> PonerHuevos()
         {
             PonerHuevos _ponerHuevos = new PonerHuevos();
-            List<PatoBase> patos=new List<PatoBase>();
+            List<IPato> patos=new List<IPato>();
             patos.Add(new Silvestre());
             patos.Add(new Cisne());
            return _ponerHuevos.Cantidad(patos);      

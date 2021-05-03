@@ -1,11 +1,15 @@
 using System.Collections.Generic;
 
-public class Cisne : PatoBase
+public class Cisne : PatoBase,IPato
 {
 
     public Cisne()
     {
         TipoPato = "Cisne";
+    }
+    public string PonerHuevos()
+    {
+        return $"Cantidad de huevos en un {TipoPato}: {2 + 2 * 3}";
     }
 
 

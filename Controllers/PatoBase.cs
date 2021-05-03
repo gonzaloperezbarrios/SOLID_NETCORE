@@ -12,6 +12,7 @@ public class PatoBase
     {
         TipoPato = "Pato";
     }
+
     public string Nadar()
     {
         return new NadarHabilidad(TipoPato).Nadar();

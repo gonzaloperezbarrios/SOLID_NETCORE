@@ -1,0 +1,4 @@
+interface IPato{
+
+    string PonerHuevos();
+}

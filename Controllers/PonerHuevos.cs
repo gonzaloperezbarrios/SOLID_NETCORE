@@ -2,19 +2,12 @@ using System.Collections.Generic;
 
 class PonerHuevos
 {
-    public IEnumerable<string> Cantidad(List<PatoBase> patos)
+    public IEnumerable<string> Cantidad(List<IPato> patos)
     {
         List<string> huevos = new List<string>();
-        foreach (PatoBase pato in patos)
+        foreach (IPato pato in patos)
         {
-            if (pato.TipoPato == "Silvestre")
-            {
-                huevos.Add($"Cantidad de huevos en un pato {pato.TipoPato}: {5 * 3}");
-            }
-            if (pato.TipoPato == "Cisne")
-            {
-                huevos.Add($"Cantidad de huevos en un {pato.TipoPato}: {2 + 2 * 3}");
-            }
+            huevos.Add(pato.PonerHuevos());
         }
         return huevos;
     }
